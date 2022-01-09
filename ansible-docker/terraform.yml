@@ -1,0 +1,47 @@
+---
+- hosts: file_server
+  become: true
+  tasks:
+  - name: install unzip package
+    apt:
+    - unzip
+
+  - name: install terraform on ubuntu 
+     unarchive:
+        src: https://releases.hashicorp.com/terraform/1.0.11/terraform_1.0.11_linux_amd64.zip
+        dest: /usr/local/bin
+        remote_src: yes
+        mode: 0755
+        owner: root
+        group: root
+
+
+  - name: start apache service on ubuntu
+    service:
+      name: apache2
+      state: restarted     
+
+
+
+- hosts: all 
+  become: true
+  tasks: 
+
+  - name: create ali user 
+    user:
+      name: ali
+      groups: root
+
+
+  - name: add ssh_key for ali user
+    authorized_key:
+      user: ali
+      key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAPGkq891eA1m4KVJX5yS9FOkVI1U8/82K8n26yGiZtP ansible-2"
+
+  - name: add sudoers file for ali
+    copy: 
+      src: sudoers_ali
+      dest: /etc/sudoers.d/ali
+      owner: root
+      group: root
+

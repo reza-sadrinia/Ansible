@@ -1,0 +1,17 @@
+---
+- hosts: all 
+  become: true
+  tasks:
+  - name: remove apache from ubuntu servers
+    apt:
+      name: apache2
+      state: absent
+      when: ansible_distribution == "Ubuntu"
+  - name: remove httpd and php for CentOS servers 
+    yum:
+      name:
+        - httpd
+        - php 
+      state: absent
+      autoremove: yes
+    when: ansible_distribution == "CentOS"  

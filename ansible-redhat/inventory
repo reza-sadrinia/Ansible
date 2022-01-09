@@ -1,0 +1,14 @@
+[websrv]
+172.17.0.2
+172.17.0.3
+
+[dbsrv]
+172.17.0.4
+172.17.0.5
+
+[web]
+192.168.1.17
+
+[linux:vars]
+ansible_password = rezaiv
+ansible_user = root

@@ -1,0 +1,19 @@
+---
+- name: test register
+  hosts: all 
+  become: true
+  gather_facts: False
+  tasks:
+  - name: install packges
+    dnf: 
+      name:
+      - epel-release
+      state: present
+    tags: install 
+  - name: get list
+    command: ip addr
+    register: ls
+  - name: print
+    debug:
+      var: ls.stdout_lines
+    tags: ip

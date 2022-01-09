@@ -1,0 +1,18 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+  - name: start service ubuntu
+    service:
+      name: apache2
+      state: restarted
+    when: ansible_distribution == "Ubuntu"
+
+#####################################################
+
+  - name: start service CentOS
+    service:
+      name: httpd
+      state: restarted
+    when: ansible_distribution == "CentOS"

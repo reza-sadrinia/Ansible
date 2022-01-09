@@ -1,0 +1,19 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: Update && install httpd and php for ubuntu
+    dnf:
+      name: 
+      - httpd
+      - php
+      state: latest
+      update_cache: yes
+  - name: start apache service
+    service:
+      name: httpd
+      state: started
+
+

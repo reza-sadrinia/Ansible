@@ -1,0 +1,28 @@
+---
+- name: install docker 
+  hosts: all 
+  serial: 2
+  tasks:
+  - name: install docker on server 
+    dnf:
+      name: docker-io
+      state: installed
+    async: 10
+    poll: 0 
+    register: docker
+
+  - name: update repo
+    yum:
+      update_cache: yes
+
+  - name: get the secend
+    command: /bin/sleep 15
+    async: 45
+    poll: 5
+
+#  - name: get the task status
+#    async:
+#    jid: "{{ docker_ansible.job_id  }}"
+#    register: result
+#    until: result.finished
+#    retries: 30 

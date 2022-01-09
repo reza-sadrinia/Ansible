@@ -1,0 +1,33 @@
+- name: install httpd package (CentOS)
+  tags: apache,centos,httpd
+  dnf:
+    name:
+    - httpd
+    - php
+    state: latest
+  when: ansible_distribution == "CentOS"
+
+- name: start and enable httpd (CentOS)
+  tags: apache,centos,httpd
+  service:
+    name: httpd
+    state: started
+    enabled: yes
+  when: ansible_distribution == "CentOS"
+
+- name: install apache2 package (Ubuntu)
+  tags: apache,apache2,ubuntu
+  apt:
+    name:
+    - apache2
+    - libapache2-mod-php
+    state: latest
+  when: ansible_distribution == "Ubuntu"
+
+
+- name: restart httpd (CentOS)
+  tags: apache,centos,httpd
+  service:
+    name: httpd
+    state: started
+  when: ansible_distribution == "CentOS"

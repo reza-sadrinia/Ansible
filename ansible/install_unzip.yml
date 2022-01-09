@@ -1,0 +1,17 @@
+---
+- hosts: all
+  become: true
+  tasks:
+  - name: install unzip on ubuntu
+    apt:
+      name: unzip
+      state: present
+    when: ansible_distribution == "Ubuntu"
+
+################################################
+
+  - name: install unzip on Centos
+    yum:
+      name: unzip
+      state: present
+    when: ansible_distribution == "CentOS"

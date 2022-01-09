@@ -1,0 +1,23 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: Update && install apache2 and php for ubuntu
+    apt:
+      name: 
+      - apache2
+      - php
+      state: latest
+    when: ansible_distribution == "Ubuntu"
+
+############################################3
+
+  - name: install httpd && php for centos
+    dnf:
+      name: 
+      - httpd
+      - php 
+      state: latest
+    when: ansible_distribution == "CentOS"

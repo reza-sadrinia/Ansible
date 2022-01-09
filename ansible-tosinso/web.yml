@@ -1,0 +1,34 @@
+---
+- hosts: all
+  become: true
+  strategy: free
+  serial: 1
+  tasks:
+
+  - name: download web page
+    get_url:
+     url: https://www.free-css.com/assets/files/free-css-templates/download/page273/spourmo.zip
+     dest: /home/reza/
+  - name: unzip website
+    unarchive:
+       src: /home/reza/spourmo.zip
+       dest: /home/reza/
+       remote_src: yes
+
+  - name: copy site to default dirc
+    copy:
+       src: /home/reza/spourmo/
+       dest: /var/www/html/
+       remote_src: yes
+       directory_mode: yes
+
+  - name: open site port
+    firewalld:
+       service: http
+       state: enabled
+       permanent: true
+
+  - name: start http service
+    service:
+       name: firewalld
+       state: restarted

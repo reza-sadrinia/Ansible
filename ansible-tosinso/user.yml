@@ -1,0 +1,17 @@
+---
+- name: add user
+  hosts: all 
+  tasks:
+  - name: remove user
+    user:
+     name: ansible
+     state: absent
+     remove: yes
+    tags: remove
+  - name: create user
+    command: adduser ansible
+  - name: set password
+    user:
+      name: ansible
+      password: rezaiv
+      append: yes

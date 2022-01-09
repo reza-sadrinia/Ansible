@@ -1,0 +1,9 @@
+- name: create ali user 
+  user:
+     name: ali
+     groups: root
+
+- name: add ssh key for ali 
+  authorized_key:
+    user: ali
+    key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAPGkq891eA1m4KVJX5yS9FOkVI1U8/82K8n26yGiZtP ansible-2"

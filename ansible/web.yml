@@ -1,0 +1,22 @@
+
+- hosts: all
+  become: true
+  tasks:
+  - name: download web page
+    get_url:
+     url: https://www.free-css.com/assets/files/free-css-templates/download/page273/spourmo.zip
+     dest: /home/reza/
+  - name: unzip website
+    unarchive:
+       src: /home/reza/spourmo.zip
+       dest: /home/reza/
+       remote_src: yes
+
+  - name: copy site to default dirc
+    copy:
+       src: /home/reza/spourmo/
+       dest: /var/www/html/
+       remote_src: yes
+       directory_mode: yes
+
+ 

@@ -2,9 +2,15 @@
 - hosts: ubuntu 
   become: true
   tasks: 
-  - name: create newbin user 
-    user:
-      name: newbin
-      password: "123"
-      uid: 4000
-      state: present
+
+  - name: install software
+    apt:
+       name: "{{ packages  }}"
+       state: absent
+    tags: software
+
+  - name: start apache2 service
+    service: 
+      name: apache2
+      state: restarted
+    tags: service

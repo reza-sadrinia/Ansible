@@ -1,0 +1,10 @@
+---
+- hosts: ubuntu 
+  become: true
+  tasks: 
+  - name: create newbin user 
+    user:
+      name: newbin
+      password: "123"
+      uid: 4000
+      state: present

@@ -1,0 +1,17 @@
+packages:
+      - htop
+      - bmon
+      - php
+    # - mod-php
+    # - mod-ssl
+      - apache2
+      - atop
+
+myusers:
+      - newbin
+      - ali
+      - test
+software:
+      - htop
+      - atop
+      - bmon

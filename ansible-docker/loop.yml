@@ -1,0 +1,25 @@
+---
+- hosts: ubuntu
+  become: true
+  gather_facts: false
+  # vars:
+  #   myusers:
+  #     - newbin
+  #     - ali
+  #     - test
+  #   software:
+  #     - htop
+  #     - atop
+  #     - bmon
+  tasks: 
+  - name: create user
+    user: 
+      name: "{{ item  }}"
+      state: absent
+    loop: "{{ myusers  }}"
+
+  - name: install some software
+    apt: 
+      name: "{{ item  }}"
+      state: absent
+    loop: "{{ software  }}"

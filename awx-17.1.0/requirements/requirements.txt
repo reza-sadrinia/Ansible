@@ -86,7 +86,7 @@ pyasn1==0.4.8             # via pyasn1-modules, python-ldap, rsa, service-identi
 pycparser==2.20           # via cffi
 pygerduty==0.38.2         # via -r /awx_devel/requirements/requirements.in
 pyhamcrest==2.0.2         # via twisted
-pyjwt==1.7.1              # via adal, social-auth-core, twilio
+pyjwt==2.4.0              # via adal, social-auth-core, twilio
 pyopenssl==19.1.0         # via twisted
 pyparsing==2.4.6          # via -r /awx_devel/requirements/requirements.in
 pyrad==2.3                # via django-radius

@@ -1,4 +1,4 @@
-FROM centos:8.3.2011
+FROM centos:centos8
 
 ARG suricata_version
 RUN dnf -y install dnf-plugins-core \

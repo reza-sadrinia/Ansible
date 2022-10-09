@@ -19,7 +19,7 @@ channels-redis==3.1.0     # via -r /awx_devel/requirements/requirements.in
 channels==2.4.0           # via -r /awx_devel/requirements/requirements.in, channels-redis
 chardet==3.0.4            # via aiohttp, requests
 constantly==15.1.0        # via twisted
-cryptography==2.9.2       # via adal, autobahn, azure-keyvault, pyopenssl, service-identity, social-auth-core
+cryptography==3.2       # via adal, autobahn, azure-keyvault, pyopenssl, service-identity, social-auth-core
 daphne==2.4.1             # via -r /awx_devel/requirements/requirements.in, channels
 defusedxml==0.6.0         # via python3-openid, python3-saml, social-auth-core
 dictdiffer==0.8.1         # via openshift
@@ -86,7 +86,7 @@ pyasn1==0.4.8             # via pyasn1-modules, python-ldap, rsa, service-identi
 pycparser==2.20           # via cffi
 pygerduty==0.38.2         # via -r /awx_devel/requirements/requirements.in
 pyhamcrest==2.0.2         # via twisted
-pyjwt==1.7.1              # via adal, social-auth-core, twilio
+pyjwt==2.4.0              # via adal, social-auth-core, twilio
 pyopenssl==19.1.0         # via twisted
 pyparsing==2.4.6          # via -r /awx_devel/requirements/requirements.in
 pyrad==2.3                # via django-radius
@@ -119,7 +119,7 @@ twilio==6.37.0            # via -r /awx_devel/requirements/requirements.in
 twisted[tls]==20.3.0      # via -r /awx_devel/requirements/requirements.in, daphne
 txaio==20.12.1            # via autobahn
 typing-extensions==3.7.4.1  # via aiohttp
-urllib3==1.25.8           # via kubernetes, requests
+urllib3==1.26.5           # via kubernetes, requests
 uwsgi==2.0.18             # via -r /awx_devel/requirements/requirements.in
 uwsgitop==0.11            # via -r /awx_devel/requirements/requirements.in
 websocket-client==0.57.0  # via kubernetes, slackclient

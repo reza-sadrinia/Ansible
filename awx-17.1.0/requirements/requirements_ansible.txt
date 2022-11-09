@@ -46,7 +46,7 @@ cachetools==3.1.1         # via google-auth
 cffi==1.13.2              # via bcrypt, cryptography, pynacl
 chardet==3.0.4            # via requests
 colorama==0.4.3           # via azure-cli-core, knack
-cryptography==2.8         # via adal, azure-keyvault, azure-storage, openstacksdk, paramiko, pyopenssl, requests-credssp, requests-kerberos, requests-ntlm
+cryptography==3.2         # via adal, azure-keyvault, azure-storage, openstacksdk, paramiko, pyopenssl, requests-credssp, requests-kerberos, requests-ntlm
 decorator==4.4.1          # via dogpile.cache, openstacksdk
 docutils==0.15.2          # via botocore
 dogpile.cache==0.9.0      # via openstacksdk
@@ -65,7 +65,7 @@ jsonpointer==2.0          # via jsonpatch
 keystoneauth1==3.18.0     # via openstacksdk
 knack==0.3.3              # via azure-cli-core
 kubernetes==11.0.0        # via openshift
-lxml==4.4.2               # via ncclient
+lxml==4.9.1               # via ncclient
 markupsafe==1.1.1         # via jinja2
 monotonic==1.5; python_version < "3" # via humanfriendly
 msrest==0.6.1             # via -r /awx_devel/requirements/requirements_ansible.in, azure-cli-core, azure-keyvault, azure-mgmt-authorization, azure-mgmt-automation, azure-mgmt-compute, azure-mgmt-containerinstance, azure-mgmt-containerservice, azure-mgmt-cosmosdb, azure-mgmt-devtestlabs, azure-mgmt-dns, azure-mgmt-hdinsight, azure-mgmt-iothub, azure-mgmt-keyvault, azure-mgmt-network, azure-mgmt-rdbms, azure-mgmt-resource, azure-mgmt-servicebus, azure-mgmt-sql, azure-mgmt-storage, azure-mgmt-web, msrestazure
@@ -89,7 +89,7 @@ pyasn1==0.4.8             # via pyasn1-modules, requests-credssp, rsa
 pycparser==2.19           # via cffi
 pycurl==7.43.0.1          # via -r /awx_devel/requirements/requirements_ansible.in, ovirt-engine-sdk-python
 pygments==2.5.2           # via azure-cli-core, knack
-pyjwt==1.7.1              # via adal, azure-cli-core
+pyjwt==2.4.0              # via adal, azure-cli-core
 pykerberos==1.2.1         # via requests-kerberos
 pynacl==1.4.0             # via paramiko
 pyopenssl==19.1.0         # via azure-cli-core, requests-credssp
@@ -115,7 +115,7 @@ six==1.13.0               # via azure-cli-core, bcrypt, cryptography, google-aut
 stevedore==1.31.0         # via keystoneauth1
 tabulate==0.8.2           # via azure-cli-core, knack
 typing==3.7.4.1; python_version < "3" # via msrest
-urllib3==1.25.7           # via botocore, kubernetes, requests
+urllib3==1.26.5           # via botocore, kubernetes, requests
 websocket-client==0.57.0  # via kubernetes
 wheel==0.33.6  # via azure-cli-core (overriden, see upgrade blockers)
 xmltodict==0.12.0         # via pywinrm
